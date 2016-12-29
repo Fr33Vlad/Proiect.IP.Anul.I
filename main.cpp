@@ -85,6 +85,250 @@ double lungKMIN(double KM)
 {
     return KM* 39370;
 }
+//functii conversie arie
+double arieARHA(double AR)
+{
+    return AR*0.01;
+}
+double arieARMP(double AR)
+{
+    return AR*100;
+}
+double arieARKMP(double AR)
+{
+    return AR*0.0001;
+}
+double arieHAAR(double HA)
+{
+    return HA*100;
+}
+double arieHAMP(double HA)
+{
+    return HA/0.0001;
+}
+double arieHAKMP(double HA)
+{
+    return HA/100.00;
+}
+double arieMPAR(double MP)
+{
+    return MP*0.01;
+}
+double arieMPHA(double MP)
+{
+    return MP/10000;
+}
+double arieKMPAR(double KMP)
+{
+    return KMP*10000;
+}
+double arieKMPHA(double KMP)
+{
+    return KMP/0.010000;
+}
+double arieKMPMP(double KMP)
+{
+    return KMP*1000000;
+}
+//functii conversie volum
+double m3l(double m3)
+{
+    return m3*1000;
+}
+double m3galUK(double m3)
+{
+    return m3*219.9736031676199;
+}
+double m3galUS(double m3)
+{
+    return m3*264.2007926023778;
+}
+double lm3(double l)
+{
+    return l*0.001;
+}
+double lgalUK(double l)
+{
+    return l*0.2199736031676199;
+}
+double lgalUS(double l)
+{
+    return l*0.2642007926023778;
+}
+double galUKm3(double galUK)
+{
+    return galUK*0.004546;
+}
+double galUKl(double galUK)
+{
+    return galUK*4.545999999999999;
+}
+double galUKgalUS(double galUK)
+{
+    return galUK*1.2010568031704094;
+}
+
+double galUSgalUK(double galUS)
+{
+    return galUS*0.8326000879894414;
+}
+double galUSm3(double galUS)
+{
+    return galUS*0.003785;
+}
+double galUSl(double galUS)
+{
+    return galUS*3.785;
+}
+//functii conversie timp
+double smin(double s)
+{
+    return s*0.016666666666666666;
+}
+double sh(double s)
+{
+    return s*0.0002777777777777778;
+}
+double szi(double s)
+{
+    return s*0.000011574074074074073;
+}
+double mins(double s)
+{
+    return s*60;
+
+}
+double minh(double s)
+{
+    return s*0.016666666666666666;
+
+}
+double minzi(double s)
+{
+    return s*0.0006944444444444445;
+
+}
+double hs(double s)
+{
+    return s*3600;
+}
+double hmin(double s)
+{
+    return s*60;
+}
+double hzi(double s)
+{
+    return s*0.041666666666666664;
+}
+double zis(double s)
+{
+    return s*86400;
+}
+double zimin(double s)
+{
+    return s*1440;
+}
+double zih(double s)
+{
+    return s*24;
+}
+//functii conversie viteza
+double kmhmph(double k)
+{
+    return k*0.6213711972083035;
+}
+double kmhms(double k)
+{
+    return k*0.27777778;
+}
+double mphkmh(double k)
+{
+    return k*1.6093439871252482;
+}
+double mphms(double k)
+{
+    return k*0.44704;
+}double mskmh(double k)
+{
+    return k*3.5999999712000004;
+}
+double msmph(double k)
+{
+    return k*2.2369362920544025;
+}
+//functii conversie temperatura
+double tempCR(double C )
+{
+    double R;
+    R=(C+273.15)*9/5;
+    return R;
+}
+double tempCF(double C )
+{
+    double F;
+    F=C*9/5+32;
+    return F;
+}
+double tempCK(double C )
+{
+    double K;
+    K=C+273.15;
+    return K;
+}
+double tempFC(double F )
+{
+    double C;
+    C=(F-32)*5/9;
+    return C;
+}
+double tempFR(double F )
+{
+    double R;
+    R=F+459.67;
+    return R;
+}
+double tempFK(double F )
+{
+    double K;
+    K=(F+459.67)*5/9;
+    return K;
+}
+double tempKF(double K )
+{
+    double F;
+    F=K*9/5-459.67;
+    return F;
+}
+double tempKC(double K )
+{
+    double C;
+    C=K-273.15;
+    return C;
+}
+double tempKR(double K )
+{
+    double R;
+    R=K*9/5;
+    return R;
+}
+double tempRF(double R )
+{
+    double F;
+    F=R-459.67;
+    return F;
+}
+double tempRC(double R )
+{
+    double C;
+    C=(R-491.67)*5/9;
+    return C;
+}
+double tempRK(double R )
+{
+    double K;
+    K=R*5/9;
+    return K;
+}
 void meniu()
 {
     system("cls");
@@ -370,90 +614,531 @@ int main()
         }
         case 2:
         {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            system("cls");
+            cout << "\t\t\t\tConvertor Arie\n"<<endl;
+            cout << "1) Ari in hectare\n";
+            cout << "2) Ari in kilometri patrati\n";
+            cout << "3) Ari in metri patrati\n";
+            cout << "4) Hectare in ari\n";
+            cout << "5) Hectare in metri patrati\n";
+            cout << "6) Hectare in kilometri patrati\n";
+            cout << "7) Metri patrati in ari\n";
+            cout << "8) Metri patrati in hectare\n";
+            cout << "9) Kilometri patrati in metri patrati\n";
+            cout << "10) Kilometri patrati in ari\n";
+            cout << "11) Kilometri patrati in hectare\n"<<endl;
+            cout<<"\nSelectati optiunea:";
+            cin>>c;
+            switch(c)
+            {
+
+            case 1:
+            {
+                system("cls");
+                cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" ari = "<<arieARHA(x)<<" hectare"<<endl;
+                cin>>x;
+                break;
+            }
+
+            case 2:
+            {
+                system("cls");
+                cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" ari = "<<arieARKMP(x)<<" kilometri patrati"<<endl;
+                cin>>x;
+                break;
+            }
+            case 3:
+            {
+                system("cls");
+                cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" ari = "<<arieARMP(x)<<" metri patrati"<<endl;
+                cin>>x;
+                break;
+            }
+            case 4:
+            {
+                system("cls");
+                cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" hectare = "<<arieHAAR(x)<<" ari"<<endl;
+                cin>>x;
+                break;
+            }
+            case 5:
+            {
+                system("cls");
+                cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" hectare = "<<arieHAMP(x)<<" metri patrati"<<endl;
+                cin>>x;
+                break;
+            }
+            case 6:
+            {
+                system("cls");
+                cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" hectare = "<<arieHAKMP(x)<<" kilometri partati"<<endl;
+                cin>>x;
+                break;
+            }
+            case 7:
+            {
+                system("cls");
+                cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" metri patrati = "<<arieMPAR(x)<<" ari"<<endl;
+                cin>>x;
+                break;
+            }
+            case 8:
+            {
+                system("cls");
+                cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" metri patrati = "<<arieMPHA(x)<<" hectare"<<endl;
+                cin>>x;
+                break;
+            }
+            case 9:
+            {
+                system("cls");
+                cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilometri patrati = "<<arieKMPMP(x)<<" metri partati"<<endl;
+                cin>>x;
+                break;
+            }
+            case 10:
+            {
+                system("cls");
+                cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilometri patrati = "<<arieKMPAR(x)<<" ari"<<endl;
+                cin>>x;
+                break;
+            }
+            case 11:
+            {
+                system("cls");
+                cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilometri patrati = "<<arieKMPHA(x)<<" hectare"<<endl;
+                cin>>x;
+                break;
+            }
+            }
 
         }
+        break;
+        case 3:
+        {
+            system("cls");
+            cout << "\t\t\t\tConvertor Volum\n"<<endl;
+            cout << "1) Metri cubi in litri\n";
+            cout << "2) Metri cubi in galoane(US)\n";
+            cout << "3) Metri cubi in galoane(UK)\n";
+            cout << "4) Litri in metri cubi\n";
+            cout << "5) Litri in galoane(US)\n";
+            cout << "6) Litri in galoane(UK)\n";
+            cout << "7) Galoane(US) in metri cubi\n";
+            cout << "8) Galoane(US) in galoane(UK)\n";
+            cout << "9) Galoane(US) in litri\n";
+            cout << "10) Galoane(UK) in metri cubi\n";
+            cout << "11) Galoane(UK) in galoane(US)\n";
+            cout << "12) Galoane(UK) in litri\n"<<endl;
+            cout<<"\nSelectati optiunea:";
+            cin>>c;
+            switch(c)
+            {
+            case 1:
+            {
+                system("cls");
+                cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" metri cubi = "<<m3l(x)<<" litri"<<endl;
+                cin>>x;
+                break;
+            }
+            case 2:
+            {
+                system("cls");
+                cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" metri cubi = "<<m3galUS(x)<<" galoane(US)"<<endl;
+                cin>>x;
+                break;
+            }
+            case 3:
+            {
+                system("cls");
+                cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" metri cubi = "<<m3galUK(x)<<" galoane(UK)"<<endl;
+                cin>>x;
+                break;
+            }
+            case 4:
+            {
+                system("cls");
+                cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" litri = "<<lm3(x)<<" metri cubi"<<endl;
+                cin>>x;
+                break;
+            }
+            case 5:
+            {
+                system("cls");
+                cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" litri = "<<lgalUS(x)<<" galoane(US)"<<endl;
+                cin>>x;
+                break;
+            }
+            case 6:
+            {
+                system("cls");
+                cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" litri = "<<lgalUK(x)<<" galoane(UK)"<<endl;
+                cin>>x;
+                break;
+            }
+            case 7:
+            {
+                system("cls");
+                cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" galoane(US) = "<<galUSm3(x)<<" metri cubi"<<endl;
+                cin>>x;
+                break;
+            }
+            case 8:
+            {
+                system("cls");
+                cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" galoane(US) = "<<galUSgalUK(x)<<" galoane(UK)"<<endl;
+                cin>>x;
+                break;
+            }
+            case 9:
+            {
+                system("cls");
+                cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" galoane(US) = "<<galUSl(x)<<" litri"<<endl;
+                cin>>x;
+                break;
+            }
+            case 10:
+            {
+                system("cls");
+                cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" galoane(UK) = "<<galUKm3(x)<<" metri cubi"<<endl;
+                cin>>x;
+                break;
+            }
+            case 11:
+            {
+                system("cls");
+                cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" galoane(UK) = "<<galUKgalUS(x)<<" galoane(US)"<<endl;
+                cin>>x;
+                break;
+            }
+            case 12:
+            {
+                system("cls");
+                cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" galoane(UK) = "<<galUKl(x)<<" litri"<<endl;
+                cin>>x;
+                break;
+            }
+            }//switch case3
+        }//case 3
+        break;
 
 
+        case 4:
+        {
+
+            system("cls");
+            cout << "\t\t\t\tConvertor Timp\n"<<endl;
+            cout << "1) Secunde cubi in minute\n";
+            cout << "2) Secunde cubi in ore\n";
+            cout << "3) Secunde cubi in zile\n";
+            cout << "4) Minute in secunde\n";
+            cout << "5) Minute in ore\n";
+            cout << "6) Minute in zile\n";
+            cout << "7) Ore in secunde\n";
+            cout << "8) Ore in minute\n";
+            cout << "9) Ore in zile\n";
+            cout << "10) Zile in secunde\n";
+            cout << "11) Zile in minute\n";
+            cout << "12) Zile in ore\n"<<endl;
+            cout<<"\nSelectati optiunea:";
+            cin>>c;
+            switch(c)
+            {
+
+
+
+            case 1:
+            {
+                system("cls");
+                cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" secunde = "<<smin(x)<<" minute"<<endl;
+                cin>>x;
+                break;
+            }
+            case 2:
+            {
+                system("cls");
+                cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" secunde = "<<sh(x)<<" ore"<<endl;
+                cin>>x;
+                break;
+            }
+            case 3:
+            {
+                system("cls");
+                cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" secunde = "<<szi(x)<<" zile "<<endl;
+                cin>>x;
+                break;
+            }
+            case 4:
+            {
+                system("cls");
+                cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" minute = "<<mins(x)<<" secunde"<<endl;
+                cin>>x;
+                break;
+            }
+            case 5:
+            {
+                system("cls");
+                cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" minute = "<<minh(x)<<" ore"<<endl;
+                cin>>x;
+                break;
+            }
+            case 6:
+            {
+                system("cls");
+                cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" minute = "<<minzi(x)<<" zile"<<endl;
+                cin>>x;
+                break;
+            }
+            case 7:
+            {
+                system("cls");
+                cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" ore = "<<hs(x)<<" secunde"<<endl;
+                cin>>x;
+                break;
+            }
+            case 8:
+            {
+                system("cls");
+                cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" ore = "<<hmin(x)<<" minute"<<endl;
+                cin>>x;
+                break;
+            }
+            case 9:
+            {
+                system("cls");
+                cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" ore = "<<hzi(x)<<" zile"<<endl;
+                cin>>x;
+                break;
+            }
+            case 10:
+            {
+                system("cls");
+                cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" zile = "<<zis(x)<<" secunde"<<endl;
+                cin>>x;
+                break;
+            }
+            case 11:
+            {
+                system("cls");
+                cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" zile = "<<zimin(x)<<" minute"<<endl;
+                cin>>x;
+                break;
+            }
+            case 12:
+            {
+                system("cls");
+                cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" zile = "<<zih(x)<<" ore"<<endl;
+                cin>>x;
+                break;
+            }
+            }//switch
+        }//case4
+        break;
+        case 5:
+        {
+            system("cls");
+            cout << "\t\t\t\tConvertor Viteza\n"<<endl;
+            cout << "1) KM/H in MPH\n";
+            cout << "2) KM/H in M/S\n";
+            cout << "3) MPH in KM/H\n";
+            cout << "4) MPH in M/S\n";
+            cout << "5) M/S in KM/H\n";
+            cout << "6) M/S in MPH\n"<<endl;
+            cout<<"\nSelectati optiunea:";
+            cin>>c;
+            switch(c)
+            {
+
+
+            case 1:
+            {
+                system("cls");
+                cout<<"\tIntroduceti viteza pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" KM/H = "<<kmhmph(x)<<" MPH"<<endl;
+                cin>>x;
+                break;
+            }
+            case 2:
+            {
+                system("cls");
+                cout<<"\tIntroduceti viteza pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" KM/H = "<<kmhms(x)<<" M/S"<<endl;
+                cin>>x;
+                break;
+            }
+            case 3:
+            {
+                system("cls");
+                cout<<"\tIntroduceti viteza pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" MPH = "<<mphkmh(x)<<" KM/H"<<endl;
+                cin>>x;
+                break;
+            }
+            case 4:
+            {
+                system("cls");
+                cout<<"\tIntroduceti viteza pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<"MPH = "<<mphms(x)<<" M/S"<<endl;
+                cin>>x;
+                break;
+            }
+            case 5:
+            {
+                system("cls");
+                cout<<"\tIntroduceti viteza pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" M/S = "<<mskmh(x)<<" KM/H"<<endl;
+                cin>>x;
+                break;
+            }
+            case 6:
+            {
+                system("cls");
+                cout<<"\tIntroduceti viteza pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" M/S = "<<msmph(x)<<" MPH"<<endl;
+                cin>>x;
+                break;
+            }
+
+
+
+            }//switch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }//case5
+        break;
         }
     }
     while(op>=1 && op<=20);
