@@ -248,7 +248,8 @@ double mphkmh(double k)
 double mphms(double k)
 {
     return k*0.44704;
-}double mskmh(double k)
+}
+double mskmh(double k)
 {
     return k*3.5999999712000004;
 }
@@ -328,6 +329,104 @@ double tempRK(double R )
     double K;
     K=R*5/9;
     return K;
+}
+//functii convertire masa
+double gkg(double g)
+{
+    return g*0.001;
+}
+double glb(double g)
+{
+    return g*0.0022046244201837776;
+}
+double gmg(double g)
+{
+    return g*1000.0000000000001;
+}
+double kgg(double g)
+{
+    return g*1000;
+}
+double kglb(double g)
+{
+    return g*2.2046244201837775;
+}
+double kgmg(double g)
+{
+    return g*1000000;
+}
+double lbg(double g)
+{
+    return g*453.592;
+}
+double lbkg(double g)
+{
+    return g*0.453592;
+}
+double lbmg(double g)
+{
+    return g*453592;
+}
+double mgg(double g)
+{
+    return g*0.001;
+}
+double mgkg(double g)
+{
+    return g*0.000001;
+}
+double mglb(double g)
+{
+    return g*0.0000022046244201837775;
+}
+//functii convertire energie
+double calkcal(double c)
+{
+    return c*0.001;
+}
+double calj(double c)
+{
+    return c*4.1868;
+}
+double calkj(double c)
+{
+    return c*0.0041868;
+}
+double kcalcal(double c)
+{
+    return c*1000.0000000000001;
+}
+double kcalj(double c)
+{
+    return c*4186.8;
+}
+double kcalkj(double c)
+{
+    return c*4.1868;
+}
+double jcal(double c)
+{
+    return c*0.23884589662749595;
+}
+double jkcal(double c)
+{
+    return c*0.00023884589662749592;
+}
+double jkj(double c)
+{
+    return c*0.001;
+}
+double kjcal(double c)
+{
+    return c*238.84589662749596;
+}
+double kjkcal(double c)
+{
+    return c*0.23884589662749592;
+}
+double kjj(double c)
+{
+    return c*1000;
 }
 void meniu()
 {
@@ -1115,31 +1214,312 @@ int main()
                 cin>>x;
                 break;
             }
-
-
-
             }//switch
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }//case5
         break;
+
+        case 6:
+        {
+
+            system("cls");
+            cout << "\t\t\t\tConvertor Temperatura\n"<<endl;
+            cout << "1) Grade celsius in grade fahrenheit\n";
+            cout << "2) Grade celsius in grade rankine\n";
+            cout << "3) Grade celsius in kelvin\n";
+            cout << "4) Grade fahrenheit in grade celsius\n";
+            cout << "5) Grade fahrenheit in grade rankine\n";
+            cout << "6) Grade fahrenheit in grade kelvin\n";
+            cout << "7) Grade rankine in grade celsius\n";
+            cout << "8) Grade rankine in grade fahrenheit\n";
+            cout << "9) Grade rankine in grade kelvin\n";
+            cout << "10) Grade kelvin in grade celsius\n";
+            cout << "11) Grade kelvin in grade fahrenheit\n";
+            cout << "12) Grade kelvin  in grade rankine\n"<<endl;
+            cout<<"\nSelectati optiunea:";
+            cin>>c;
+            switch(c)
+            {
+            case 1:
+            {
+                system("cls");
+                cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grade celsius = "<<tempCF(x)<<" grade fahrenheit"<<endl;
+                cin>>x;
+                break;
+            }
+            case 2:
+            {
+                system("cls");
+                cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grade celsius = "<<tempCR(x)<<" grade rankine "<<endl;
+                cin>>x;
+                break;
+            }
+            case 3:
+            {
+                system("cls");
+                cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grade celsius = "<<tempCK(x)<<" grade kelvin"<<endl;
+                cin>>x;
+                break;
+            }
+            case 4:
+            {
+                system("cls");
+                cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grade fahrenheit = "<<tempFC(x)<<" grade celsius"<<endl;
+                cin>>x;
+                break;
+            }
+            case 5:
+            {
+                system("cls");
+                cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grade fahrenheit = "<<tempFR(x)<<" grade rankine"<<endl;
+                cin>>x;
+                break;
+            }
+            case 6:
+            {
+                system("cls");
+                cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grade fahrenheit = "<<tempFK(x)<<" grade kelvin"<<endl;
+                cin>>x;
+                break;
+            }
+            case 7:
+            {
+                system("cls");
+                cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grade rankine = "<<tempRC(x)<<" grade celsius"<<endl;
+                cin>>x;
+                break;
+            }
+            case 8:
+            {
+                system("cls");
+                cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grade rankine = "<<tempRF(x)<<" grade fahrenheit"<<endl;
+                cin>>x;
+                break;
+            }
+            case 9:
+            {
+                system("cls");
+                cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grade rankine = "<<tempRK(x)<<" grade kelvin"<<endl;
+                cin>>x;
+                break;
+            }
+            case 10:
+            {
+                system("cls");
+                cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grade kelvin = "<<tempKC(x)<<" grade celsius"<<endl;
+                cin>>x;
+                break;
+            }
+            case 11:
+            {
+                system("cls");
+                cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grade kelvin = "<<tempKF(x)<<" grade fahrenheit"<<endl;
+                cin>>x;
+                break;
+            }
+            case 12:
+            {
+                system("cls");
+                cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grade kelvin = "<<tempKR(x)<<" grade rankine"<<endl;
+                cin>>x;
+                break;
+            }
+            }//switch
+        }//case6
+        break;
+            case 7:
+                { system("cls");
+            cout << "\t\t\t\tConvertor Masa\n"<<endl;
+            cout << "1) Grame  in kilograme\n";
+            cout << "2) Grame in livre\n";
+            cout << "3) Grame in miligrame\n";
+            cout << "4) Kilograme in grame\n";
+            cout << "5) Kilograme in livre\n";
+            cout << "6) Kilograme in miligrame\n";
+            cout << "7) Livre in grame\n";
+            cout << "8) Livre in kilograme\n";
+            cout << "9) Livre in miligrame\n";
+            cout << "10) Miligrame in grame\n";
+            cout << "11) Miligrame in livre\n";
+            cout << "12) Miligrame  in kilograme\n"<<endl;
+            cout<<"\nSelectati optiunea:";
+            cin>>c;
+            switch(c)
+            {
+                 case 1:
+            {
+                system("cls");
+                cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grame = "<<gkg(x)<<" kilograme"<<endl;
+                cin>>x;
+                break;
+            }
+            case 2:
+            {
+                system("cls");
+                cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grame = "<<glb(x)<<" livre"<<endl;
+                cin>>x;
+                break;
+            }
+            case 3:
+            {
+                system("cls");
+                cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grame = "<<gmg(x)<<" miligrame"<<endl;
+                cin>>x;
+                break;
+            }
+            case 4:
+            {
+                system("cls");
+                cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilograme = "<<kgg(x)<<" grame"<<endl;
+                cin>>x;
+                break;
+            }
+            case 5:
+            {
+                system("cls");
+                cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilograme = "<<kglb(x)<<" livre"<<endl;
+                cin>>x;
+                break;
+            }
+            case 6:
+            {
+                system("cls");
+                cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilograme = "<<kgmg(x)<<" miligrame"<<endl;
+                cin>>x;
+                break;
+            }
+            case 7:
+            {
+                system("cls");
+                cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" livre = "<<lbg(x)<<" grame"<<endl;
+                cin>>x;
+                break;
+            }
+            case 8:
+            {
+                system("cls");
+                cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" livre = "<<lbkg(x)<<" kilograme"<<endl;
+                cin>>x;
+                break;
+            }
+            case 9:
+            {
+                system("cls");
+                cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" livre = "<<lbmg(x)<<" miligrame"<<endl;
+                cin>>x;
+                break;
+            }
+            case 10:
+            {
+                system("cls");
+                cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" miligrame = "<<mgg(x)<<" grame"<<endl;
+                cin>>x;
+                break;
+            }
+            case 11:
+            {
+                system("cls");
+                cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" miligrame = "<<mglb(x)<<" livre"<<endl;
+                cin>>x;
+                break;
+            }
+            case 12:
+            {
+                system("cls");
+                cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" miligrame = "<<mgkg(x)<<" kilograme"<<endl;
+                cin>>x;
+                break;
+            }
+            }//switch
+                }//case7
+                break;
+            case 8:
+                {
+
+                }
+                break;
+
+
+
+
+
+
         }
+
+
+
+
     }
     while(op>=1 && op<=20);
 
