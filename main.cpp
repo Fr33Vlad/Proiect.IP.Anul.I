@@ -502,6 +502,32 @@ double klg(double x)
 {
     return x*1000000;
 }
+//functii convertire consum combustibil
+double lmg(double x)
+{
+    return x*235,2145;
+}
+double lkl(double x)
+{
+    return x*100;
+}
+double mgl(double x)
+{
+    return x*235,2145;
+}
+double mgkl(double x)
+{
+    return x*0,425143858;
+}
+double kll(double x)
+{
+    return x*100;
+}
+double klmg(double x)
+{
+    return x*2,352145;
+}
+
 void meniu()
 {
     system("cls");
@@ -526,12 +552,14 @@ int main()
     int op;
     do
     {
+mimi:
         meniu();
         cout<<"\n\n\n\tSelectati optiunea:";
         cin>>op;
         system("cls");
         switch(op)
         {
+loop1:
         case 1:
         {
             system("cls");
@@ -563,11 +591,15 @@ int main()
             case 1:
             {
                 system("cls");
-                cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
+                cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
                 cin>>x;
 
                 cout<<x<<" metri = "<<lungMCM(x)<<" centimetri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 2:
@@ -578,7 +610,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" metri = "<<lungMKM(x)<<" kilometri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 3:
@@ -589,7 +625,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" metri = "<<lungMIN(x)<<" inches"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
 
@@ -601,7 +641,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" metri = "<<lungMFT(x)<<" feets(picioare)"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 5:
@@ -612,7 +656,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" centimetri = "<<lungCMM(x)<<" metri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 6:
@@ -623,7 +671,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" centimetri = "<<lungCMKM(x)<<" kilometri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 7:
@@ -634,7 +686,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" centimetri = "<<lungCMIN(x)<<" inches"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 8:
@@ -645,7 +701,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" centimetri = "<<lungCMFT(x)<<" feets(picioare)"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 9:
@@ -656,7 +716,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilometri = "<<lungKMCM(x)<<" centimetri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 10:
@@ -667,7 +731,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilometri = "<<lungKMM(x)<<" metri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 11:
@@ -678,7 +746,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilometri = "<<lungKMIN(x)<<" inches"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 12:
@@ -689,7 +761,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilometri = "<<lungKMFT(x)<<" feets(picioare)"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 13:
@@ -700,7 +776,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" inches = "<<lungINM(x)<<" metri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 14:
@@ -710,7 +790,11 @@ int main()
                 cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
                 cin>>x;
                 cout<<x<<" inches = "<<lungINCM(x)<<" centimetri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 15:
@@ -721,7 +805,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" inches = "<<lungINFT(x)<<" feets(picioare)"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 16:
@@ -731,7 +819,11 @@ int main()
                 cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
                 cin>>x;
                 cout<<x<<" inches = "<<lungINKM(x)<<" kilometri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 17:
@@ -741,7 +833,11 @@ int main()
                 cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
                 cin>>x;
                 cout<<x<<" feets(picioare) = "<<lungFTCM(x)<<" centimetri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             case 18:
@@ -752,7 +848,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" feets(picioare) = "<<lungFTM(x)<<" metri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
 
@@ -764,7 +864,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" feets(picioare) = "<<lungFTKM(x)<<" kilometri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
 
@@ -777,7 +881,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" feets(picioare) = "<<lungFTIN(x)<<" inches"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop1;
+                if(x==1) goto mimi;
                 break;
             }
             }
@@ -785,6 +893,7 @@ int main()
             break;
 
         }
+loop2:
         case 2:
         {
             system("cls");
@@ -812,7 +921,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" ari = "<<arieARHA(x)<<" hectare"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop2;
+                if(x==1) goto mimi;
                 break;
             }
 
@@ -823,7 +936,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" ari = "<<arieARKMP(x)<<" kilometri patrati"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop2;
+                if(x==1) goto mimi;
                 break;
             }
             case 3:
@@ -833,7 +950,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" ari = "<<arieARMP(x)<<" metri patrati"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop2;
+                if(x==1) goto mimi;
                 break;
             }
             case 4:
@@ -843,7 +964,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" hectare = "<<arieHAAR(x)<<" ari"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop2;
+                if(x==1) goto mimi;
                 break;
             }
             case 5:
@@ -853,7 +978,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" hectare = "<<arieHAMP(x)<<" metri patrati"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop2;
+                if(x==1) goto mimi;
                 break;
             }
             case 6:
@@ -863,7 +992,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" hectare = "<<arieHAKMP(x)<<" kilometri partati"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop2;
+                if(x==1) goto mimi;
                 break;
             }
             case 7:
@@ -873,7 +1006,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" metri patrati = "<<arieMPAR(x)<<" ari"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop2;
+                if(x==1) goto mimi;
                 break;
             }
             case 8:
@@ -883,7 +1020,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" metri patrati = "<<arieMPHA(x)<<" hectare"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop2;
+                if(x==1) goto mimi;
                 break;
             }
             case 9:
@@ -893,7 +1034,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilometri patrati = "<<arieKMPMP(x)<<" metri partati"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop2;
+                if(x==1) goto mimi;
                 break;
             }
             case 10:
@@ -903,7 +1048,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilometri patrati = "<<arieKMPAR(x)<<" ari"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop2;
+                if(x==1) goto mimi;
                 break;
             }
             case 11:
@@ -913,13 +1062,18 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilometri patrati = "<<arieKMPHA(x)<<" hectare"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop2;
+                if(x==1) goto mimi;
                 break;
             }
             }
 
         }
         break;
+loop3:
         case 3:
         {
             system("cls");
@@ -947,7 +1101,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" metri cubi = "<<m3l(x)<<" litri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop3;
+                if(x==1) goto mimi;
                 break;
             }
             case 2:
@@ -957,7 +1115,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" metri cubi = "<<m3galUS(x)<<" galoane(US)"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop3;
+                if(x==1) goto mimi;
                 break;
             }
             case 3:
@@ -967,7 +1129,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" metri cubi = "<<m3galUK(x)<<" galoane(UK)"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop3;
+                if(x==1) goto mimi;
                 break;
             }
             case 4:
@@ -977,7 +1143,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" litri = "<<lm3(x)<<" metri cubi"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop3;
+                if(x==1) goto mimi;
                 break;
             }
             case 5:
@@ -987,7 +1157,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" litri = "<<lgalUS(x)<<" galoane(US)"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop3;
+                if(x==1) goto mimi;
                 break;
             }
             case 6:
@@ -997,7 +1171,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" litri = "<<lgalUK(x)<<" galoane(UK)"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop3;
+                if(x==1) goto mimi;
                 break;
             }
             case 7:
@@ -1007,7 +1185,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" galoane(US) = "<<galUSm3(x)<<" metri cubi"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop3;
+                if(x==1) goto mimi;
                 break;
             }
             case 8:
@@ -1017,7 +1199,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" galoane(US) = "<<galUSgalUK(x)<<" galoane(UK)"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop3;
+                if(x==1) goto mimi;
                 break;
             }
             case 9:
@@ -1027,7 +1213,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" galoane(US) = "<<galUSl(x)<<" litri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop3;
+                if(x==1) goto mimi;
                 break;
             }
             case 10:
@@ -1037,7 +1227,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" galoane(UK) = "<<galUKm3(x)<<" metri cubi"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop3;
+                if(x==1) goto mimi;
                 break;
             }
             case 11:
@@ -1047,7 +1241,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" galoane(UK) = "<<galUKgalUS(x)<<" galoane(US)"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop3;
+                if(x==1) goto mimi;
                 break;
             }
             case 12:
@@ -1057,14 +1255,17 @@ int main()
                 cin>>x;
 
                 cout<<x<<" galoane(UK) = "<<galUKl(x)<<" litri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop3;
+                if(x==1) goto mimi;
                 break;
             }
             }//switch case3
         }//case 3
         break;
-
-
+loop4:
         case 4:
         {
 
@@ -1096,7 +1297,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" secunde = "<<smin(x)<<" minute"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop4;
+                if(x==1) goto mimi;
                 break;
             }
             case 2:
@@ -1106,7 +1311,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" secunde = "<<sh(x)<<" ore"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop4;
+                if(x==1) goto mimi;
                 break;
             }
             case 3:
@@ -1116,7 +1325,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" secunde = "<<szi(x)<<" zile "<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop4;
+                if(x==1) goto mimi;
                 break;
             }
             case 4:
@@ -1126,7 +1339,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" minute = "<<mins(x)<<" secunde"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop4;
+                if(x==1) goto mimi;
                 break;
             }
             case 5:
@@ -1136,7 +1353,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" minute = "<<minh(x)<<" ore"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop4;
+                if(x==1) goto mimi;
                 break;
             }
             case 6:
@@ -1146,7 +1367,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" minute = "<<minzi(x)<<" zile"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop4;
+                if(x==1) goto mimi;
                 break;
             }
             case 7:
@@ -1156,7 +1381,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" ore = "<<hs(x)<<" secunde"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop4;
+                if(x==1) goto mimi;
                 break;
             }
             case 8:
@@ -1166,7 +1395,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" ore = "<<hmin(x)<<" minute"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop4;
+                if(x==1) goto mimi;
                 break;
             }
             case 9:
@@ -1176,7 +1409,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" ore = "<<hzi(x)<<" zile"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop4;
+                if(x==1) goto mimi;
                 break;
             }
             case 10:
@@ -1186,7 +1423,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" zile = "<<zis(x)<<" secunde"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop4;
+                if(x==1) goto mimi;
                 break;
             }
             case 11:
@@ -1196,7 +1437,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" zile = "<<zimin(x)<<" minute"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop4;
+                if(x==1) goto mimi;
                 break;
             }
             case 12:
@@ -1206,12 +1451,17 @@ int main()
                 cin>>x;
 
                 cout<<x<<" zile = "<<zih(x)<<" ore"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop4;
+                if(x==1) goto mimi;
                 break;
             }
             }//switch
         }//case4
         break;
+loop5:
         case 5:
         {
             system("cls");
@@ -1235,7 +1485,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" KM/H = "<<kmhmph(x)<<" MPH"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop5;
+                if(x==1) goto mimi;
                 break;
             }
             case 2:
@@ -1245,7 +1499,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" KM/H = "<<kmhms(x)<<" M/S"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop5;
+                if(x==1) goto mimi;
                 break;
             }
             case 3:
@@ -1255,7 +1513,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" MPH = "<<mphkmh(x)<<" KM/H"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop5;
+                if(x==1) goto mimi;
                 break;
             }
             case 4:
@@ -1265,7 +1527,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<"MPH = "<<mphms(x)<<" M/S"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop5;
+                if(x==1) goto mimi;
                 break;
             }
             case 5:
@@ -1275,7 +1541,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" M/S = "<<mskmh(x)<<" KM/H"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop5;
+                if(x==1) goto mimi;
                 break;
             }
             case 6:
@@ -1285,13 +1555,18 @@ int main()
                 cin>>x;
 
                 cout<<x<<" M/S = "<<msmph(x)<<" MPH"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop5;
+                if(x==1) goto mimi;
                 break;
             }
             }//switch
         }//case5
         break;
 
+loop6:
         case 6:
         {
 
@@ -1320,7 +1595,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grade celsius = "<<tempCF(x)<<" grade fahrenheit"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop6;
+                if(x==1) goto mimi;
                 break;
             }
             case 2:
@@ -1330,7 +1609,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grade celsius = "<<tempCR(x)<<" grade rankine "<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop6;
+                if(x==1) goto mimi;
                 break;
             }
             case 3:
@@ -1340,7 +1623,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grade celsius = "<<tempCK(x)<<" grade kelvin"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop6;
+                if(x==1) goto mimi;
                 break;
             }
             case 4:
@@ -1350,7 +1637,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grade fahrenheit = "<<tempFC(x)<<" grade celsius"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop6;
+                if(x==1) goto mimi;
                 break;
             }
             case 5:
@@ -1360,7 +1651,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grade fahrenheit = "<<tempFR(x)<<" grade rankine"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop6;
+                if(x==1) goto mimi;
                 break;
             }
             case 6:
@@ -1370,7 +1665,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grade fahrenheit = "<<tempFK(x)<<" grade kelvin"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop6;
+                if(x==1) goto mimi;
                 break;
             }
             case 7:
@@ -1380,7 +1679,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grade rankine = "<<tempRC(x)<<" grade celsius"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop6;
+                if(x==1) goto mimi;
                 break;
             }
             case 8:
@@ -1390,7 +1693,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grade rankine = "<<tempRF(x)<<" grade fahrenheit"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop6;
+                if(x==1) goto mimi;
                 break;
             }
             case 9:
@@ -1400,7 +1707,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grade rankine = "<<tempRK(x)<<" grade kelvin"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop6;
+                if(x==1) goto mimi;
                 break;
             }
             case 10:
@@ -1410,7 +1721,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grade kelvin = "<<tempKC(x)<<" grade celsius"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop6;
+                if(x==1) goto mimi;
                 break;
             }
             case 11:
@@ -1420,7 +1735,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grade kelvin = "<<tempKF(x)<<" grade fahrenheit"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop6;
+                if(x==1) goto mimi;
                 break;
             }
             case 12:
@@ -1430,12 +1749,17 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grade kelvin = "<<tempKR(x)<<" grade rankine"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop6;
+                if(x==1) goto mimi;
                 break;
             }
             }//switch
         }//case6
         break;
+loop7:
         case 7:
         {
             system("cls");
@@ -1463,7 +1787,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grame = "<<gkg(x)<<" kilograme"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop7;
+                if(x==1) goto mimi;
                 break;
             }
             case 2:
@@ -1473,7 +1801,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grame = "<<glb(x)<<" livre"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop7;
+                if(x==1) goto mimi;
                 break;
             }
             case 3:
@@ -1483,7 +1815,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grame = "<<gmg(x)<<" miligrame"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop7;
+                if(x==1) goto mimi;
                 break;
             }
             case 4:
@@ -1493,7 +1829,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilograme = "<<kgg(x)<<" grame"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop7;
+                if(x==1) goto mimi;
                 break;
             }
             case 5:
@@ -1503,7 +1843,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilograme = "<<kglb(x)<<" livre"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop7;
+                if(x==1) goto mimi;
                 break;
             }
             case 6:
@@ -1513,7 +1857,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilograme = "<<kgmg(x)<<" miligrame"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop7;
+                if(x==1) goto mimi;
                 break;
             }
             case 7:
@@ -1523,7 +1871,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" livre = "<<lbg(x)<<" grame"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop7;
+                if(x==1) goto mimi;
                 break;
             }
             case 8:
@@ -1533,7 +1885,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" livre = "<<lbkg(x)<<" kilograme"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop7;
+                if(x==1) goto mimi;
                 break;
             }
             case 9:
@@ -1543,7 +1899,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" livre = "<<lbmg(x)<<" miligrame"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop7;
+                if(x==1) goto mimi;
                 break;
             }
             case 10:
@@ -1553,7 +1913,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" miligrame = "<<mgg(x)<<" grame"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop7;
+                if(x==1) goto mimi;
                 break;
             }
             case 11:
@@ -1563,7 +1927,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" miligrame = "<<mglb(x)<<" livre"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop7;
+                if(x==1) goto mimi;
                 break;
             }
             case 12:
@@ -1573,12 +1941,17 @@ int main()
                 cin>>x;
 
                 cout<<x<<" miligrame = "<<mgkg(x)<<" kilograme"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop7;
+                if(x==1) goto mimi;
                 break;
             }
             }//switch
         }//case7
         break;
+loop8:
         case 8:
         {
             system("cls");
@@ -1606,7 +1979,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" calorii = "<<calkcal(x)<<" kilocalorii"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop8;
+                if(x==1) goto mimi;
                 break;
             }
 
@@ -1617,7 +1994,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" calorii = "<<calj(x)<<" jouli"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop8;
+                if(x==1) goto mimi;
                 break;
             }
             case 3:
@@ -1627,7 +2008,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" calorii = "<<calkj(x)<<" kilojouli"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop8;
+                if(x==1) goto mimi;
                 break;
             }
             case 4:
@@ -1637,7 +2022,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilocalorii = "<<kcalcal(x)<<" calorii"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop8;
+                if(x==1) goto mimi;
                 break;
             }
             case 5:
@@ -1647,7 +2036,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilocalorii = "<<kcalj(x)<<" jouli"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop8;
+                if(x==1) goto mimi;
                 break;
             }
             case 6:
@@ -1657,7 +2050,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilocalorii = "<<kcalkj(x)<<" kilojouli"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop8;
+                if(x==1) goto mimi;
                 break;
             }
             case 7:
@@ -1667,7 +2064,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" jouli = "<<jcal(x)<<" calorii"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop8;
+                if(x==1) goto mimi;
                 break;
             }
             case 8:
@@ -1677,7 +2078,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" jouli = "<<jkcal(x)<<" kilocalorii"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop8;
+                if(x==1) goto mimi;
                 break;
             }
             case 9:
@@ -1687,7 +2092,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" jouli = "<<jkj(x)<<" kilojouli"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop8;
+                if(x==1) goto mimi;
                 break;
             }
             case 10:
@@ -1697,7 +2106,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilojouli = "<<kjcal(x)<<" calorii"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop8;
+                if(x==1) goto mimi;
                 break;
             }
             case 11:
@@ -1707,7 +2120,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilojouli = "<<kjkcal(x)<<" kilocalorii"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop8;
+                if(x==1) goto mimi;
                 break;
             }
             case 12:
@@ -1717,13 +2134,18 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilojouli = "<<kjj(x)<<" jouli"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop8;
+                if(x==1) goto mimi;
                 break;
             }
             }//switch
         }//case8
         break;
 
+loop9:
         case 9:
         {
             system("cls");
@@ -1751,7 +2173,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" atmosfere = "<<ap(x)<<" PSI"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop9;
+                if(x==1) goto mimi;
                 break;
             }
             case 2:
@@ -1761,7 +2187,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" atmosfere = "<<ab(x)<<" bari"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop9;
+                if(x==1) goto mimi;
                 break;
             }
             case 3:
@@ -1771,7 +2201,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" atmosfere = "<<ato(x)<<" torr"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop9;
+                if(x==1) goto mimi;
                 break;
             }
             case 4:
@@ -1781,7 +2215,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" PSI = "<<pa(x)<<" atmosfere"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop9;
+                if(x==1) goto mimi;
                 break;
             }
             case 5:
@@ -1791,7 +2229,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" PSI = "<<pb(x)<<" bari"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop9;
+                if(x==1) goto mimi;
                 break;
             }
             case 6:
@@ -1801,7 +2243,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" PSI = "<<pt(x)<<" torr"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop9;
+                if(x==1) goto mimi;
                 break;
             }
             case 7:
@@ -1811,8 +2257,12 @@ int main()
                 cin>>x;
 
                 cout<<x<<" bari = "<<ba(x)<<" atmosfere"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
-                break;
+                if(x==0) goto loop9;
+                if(x==1) goto mimi;
+                break;;
             }
             case 8:
             {
@@ -1821,7 +2271,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" bari = "<<bp(x)<<" PSI"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop9;
+                if(x==1) goto mimi;
                 break;
             }
             case 9:
@@ -1831,7 +2285,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" bari = "<<bt(x)<<" torr"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop9;
+                if(x==1) goto mimi;
                 break;
             }
             case 10:
@@ -1841,7 +2299,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" torr = "<<ta(x)<<" atmosfere"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop9;
+                if(x==1) goto mimi;
                 break;
             }
             case 11:
@@ -1851,7 +2313,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" torr = "<<tp(x)<<" PSI"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop9;
+                if(x==1) goto mimi;
                 break;
             }
             case 12:
@@ -1861,13 +2327,17 @@ int main()
                 cin>>x;
 
                 cout<<x<<" torr = "<<tb(x)<<" bari"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop9;
+                if(x==1) goto mimi;
                 break;
             }
             }//switch9
         }//case9
         break;
-        case 10:
+        loop10:case 10:
         {
 
             system("cls");
@@ -1889,7 +2359,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilograme pe metru cub = "<<kmg(x)<<" grame pe centimetru cub"<<endl;
+               cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop10;
+                if(x==1) goto mimi;
                 break;
 
             }
@@ -1900,7 +2374,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilograme pe metru cub = "<<kmkl(x)<<" kilograme pe litru"<<endl;
+              cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop10;
+                if(x==1) goto mimi;
                 break;
 
             }
@@ -1911,7 +2389,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grame pe centimetru cub = "<<gkm(x)<<" kilograme pe metru cub"<<endl;
+               cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop10;
+                if(x==1) goto mimi;
                 break;
 
             }
@@ -1922,7 +2404,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" grame pe centimetru cub = "<<gkl(x)<<" kilograme pe litru"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop10;
+                if(x==1) goto mimi;
                 break;
 
             }
@@ -1933,7 +2419,11 @@ int main()
                 cin>>x;
 
                 cout<<x<<" kilograme pe litru = "<<klkm(x)<<" kilograme pe metru cub"<<endl;
+              cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop10;
+                if(x==1) goto mimi;
                 break;
 
             }
@@ -1944,14 +2434,18 @@ int main()
                 cin>>x;
 
                 cout<<setprecision(21)<<x<<" kilograme pe litru = "<<klg(x)<<" grame pe centimetru cub"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop10;
+                if(x==1) goto mimi;
                 break;
 
             }
             }//switch
         }//case10
         break;
-        case 11:
+        loop11:case 11:
         {
 
             system("cls");
@@ -1971,8 +2465,12 @@ int main()
                 system("cls");
                 cout<<"\tIntroduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
                 cin>>x;
-                cout<<x<<" litri la 100 km = "<<klg(x)<<" mile la galoane"<<endl;
+                cout<<x<<" litri la 100 km = "<<lmg(x)<<" mile la galoane"<<endl;
+               cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop11;
+                if(x==1) goto mimi;
                 break;
 
             }
@@ -1982,8 +2480,12 @@ int main()
                 cout<<"\tIntroduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
                 cin>>x;
 
-                cout<<x<<" litri la 100 km = "<<klg(x)<<" kilometri la litri"<<endl;
+                cout<<x<<" litri la 100 km = "<<lkl(x)<<" kilometri la litri"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop11;
+                if(x==1) goto mimi;
                 break;
 
             }
@@ -1993,8 +2495,12 @@ int main()
                 cout<<"\tIntroduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
                 cin>>x;
 
-                cout<<x<<" mile la galoane = "<<klg(x)<<" litri la 100 km"<<endl;
+                cout<<x<<" mile la galoane = "<<mgl(x)<<" litri la 100 km"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop11;
+                if(x==1) goto mimi;
                 break;
 
             }
@@ -2004,8 +2510,12 @@ int main()
                 cout<<"\tIntroduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
                 cin>>x;
 
-                cout<<x<<" mile la galoane = "<<klg(x)<<" kilometri la litru"<<endl;
+                cout<<x<<" mile la galoane = "<<mgkl(x)<<" kilometri la litru"<<endl;
+                cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop11;
+                if(x==1) goto mimi;
                 break;
 
             }
@@ -2015,8 +2525,12 @@ int main()
                 cout<<"\tIntroduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
                 cin>>x;
 
-                cout<<x<<" kilometri la litri = "<<klg(x)<<" litri la 100 km"<<endl;
+                cout<<x<<" kilometri la litri = "<<kll(x)<<" litri la 100 km"<<endl;
+               cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop11;
+                if(x==1) goto mimi;
                 break;
 
             }
@@ -2026,33 +2540,21 @@ int main()
                 cout<<"\tIntroduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
                 cin>>x;
 
-                cout<<x<<" kilometri la litri = "<<klg(x)<<" mile la galoane"<<endl;
+                cout<<x<<" kilometri la litri = "<<klmg(x)<<" mile la galoane"<<endl;
+               cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+                cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
                 cin>>x;
+                if(x==0) goto loop11;
+                if(x==1) goto mimi;
                 break;
 
             }
-
-
-
-
-
-            }
-
-
-
+            }//switch
         }//case11
         break;
-
-
-
-
         }
 
-
-
-
     }
-    while(op>=1 && op<=20);
-
+    while(op>=1 && op<=11);
     return 0;
 }
