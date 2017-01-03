@@ -428,6 +428,80 @@ double kjj(double c)
 {
     return c*1000;
 }
+//functii convertire presiune
+double ba(double x)
+{
+    return x*0.9671821878659459;
+}
+double bt(double x)
+{
+    return x*735.0604490503765;
+}
+double bp(double x)
+{
+    return x*14.213698297557126;
+}
+double ab(double x)
+{
+    return x*1.0339313653061224;
+}
+double ato(double x)
+{
+    return x*760.0020536691873;
+}
+double ap(double x)
+{
+    return x*14.695988486842547;
+}
+double pa(double x)
+{
+    return x*0.06804578003686579;
+}
+double pt(double x)
+{
+    return x*51.714932571539784;
+}
+double pb(double x)
+{
+    return x*0.07035466625683673;
+}
+double ta(double x)
+{
+    return x*0.0013157859181723722;
+}
+double tp(double x)
+{
+    return x*0.01933677470461073;
+}
+double tb(double x)
+{
+    return x*0.0013604323308265306;
+}
+//functii convertire densitate
+double kmg(double x)
+{
+    return x*1000;
+}
+double kmkl(double x)
+{
+    return x*0.001;
+}
+double gkm(double x)
+{
+    return x*0.001;
+}
+double gkl(double x)
+{
+    return x*0.000001;
+}
+double klkm(double x)
+{
+    return x*1000;
+}
+double klg(double x)
+{
+    return x*1000000;
+}
 void meniu()
 {
     system("cls");
@@ -1362,8 +1436,9 @@ int main()
             }//switch
         }//case6
         break;
-            case 7:
-                { system("cls");
+        case 7:
+        {
+            system("cls");
             cout << "\t\t\t\tConvertor Masa\n"<<endl;
             cout << "1) Grame  in kilograme\n";
             cout << "2) Grame in livre\n";
@@ -1381,7 +1456,7 @@ int main()
             cin>>c;
             switch(c)
             {
-                 case 1:
+            case 1:
             {
                 system("cls");
                 cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
@@ -1502,15 +1577,471 @@ int main()
                 break;
             }
             }//switch
-                }//case7
+        }//case7
+        break;
+        case 8:
+        {
+            system("cls");
+            cout << "\t\t\t\tConvertor Energie\n"<<endl;
+            cout << "1) Calorii  in kilocalorii\n";
+            cout << "2) Calorii in jouli\n";
+            cout << "3) Calorii in kilojouli\n";
+            cout << "4) Kilcalorii in calorii\n";
+            cout << "5) Kilcalorii in jouli\n";
+            cout << "6) Kilcalorii in kilojouli\n";
+            cout << "7) Jouli in calorii\n";
+            cout << "8) Jouli in kilocalorii\n";
+            cout << "9) Jouli in kilojouli\n";
+            cout << "10) Kilojouli in calorii\n";
+            cout << "11) Kilojouli in kilocalorii\n";
+            cout << "12) Kilojouli  in jouli\n"<<endl;
+            cout<<"\nSelectati optiunea:";
+            cin>>c;
+            switch(c)
+            {
+            case 1:
+            {
+                system("cls");
+                cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" calorii = "<<calkcal(x)<<" kilocalorii"<<endl;
+                cin>>x;
                 break;
+            }
+
+            case 2:
+            {
+                system("cls");
+                cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" calorii = "<<calj(x)<<" jouli"<<endl;
+                cin>>x;
+                break;
+            }
+            case 3:
+            {
+                system("cls");
+                cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" calorii = "<<calkj(x)<<" kilojouli"<<endl;
+                cin>>x;
+                break;
+            }
+            case 4:
+            {
+                system("cls");
+                cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilocalorii = "<<kcalcal(x)<<" calorii"<<endl;
+                cin>>x;
+                break;
+            }
+            case 5:
+            {
+                system("cls");
+                cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilocalorii = "<<kcalj(x)<<" jouli"<<endl;
+                cin>>x;
+                break;
+            }
+            case 6:
+            {
+                system("cls");
+                cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilocalorii = "<<kcalkj(x)<<" kilojouli"<<endl;
+                cin>>x;
+                break;
+            }
+            case 7:
+            {
+                system("cls");
+                cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" jouli = "<<jcal(x)<<" calorii"<<endl;
+                cin>>x;
+                break;
+            }
             case 8:
-                {
+            {
+                system("cls");
+                cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
 
-                }
+                cout<<x<<" jouli = "<<jkcal(x)<<" kilocalorii"<<endl;
+                cin>>x;
+                break;
+            }
+            case 9:
+            {
+                system("cls");
+                cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" jouli = "<<jkj(x)<<" kilojouli"<<endl;
+                cin>>x;
+                break;
+            }
+            case 10:
+            {
+                system("cls");
+                cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilojouli = "<<kjcal(x)<<" calorii"<<endl;
+                cin>>x;
+                break;
+            }
+            case 11:
+            {
+                system("cls");
+                cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilojouli = "<<kjkcal(x)<<" kilocalorii"<<endl;
+                cin>>x;
+                break;
+            }
+            case 12:
+            {
+                system("cls");
+                cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilojouli = "<<kjj(x)<<" jouli"<<endl;
+                cin>>x;
+                break;
+            }
+            }//switch
+        }//case8
+        break;
+
+        case 9:
+        {
+            system("cls");
+            cout << "\t\t\t\tConvertor Presiune\n"<<endl;
+            cout << "1) Atmosfere  in PSI\n";
+            cout << "2) Atmosfere in Bari\n";
+            cout << "3) Atmosfere in Torr\n";
+            cout << "4) PSI in Atmosfere\n";
+            cout << "5) PSI in Bari\n";
+            cout << "6) PSI in Torr\n";
+            cout << "7) Bari in Atmosfere\n";
+            cout << "8) Bari in PSI\n";
+            cout << "9) Bari in Torr\n";
+            cout << "10) Torr in Atmosfere\n";
+            cout << "11) Torr in PSI\n";
+            cout << "12) Torr in Bari\n"<<endl;
+            cout<<"\nSelectati optiunea:";
+            cin>>c;
+            switch(c)
+            {
+            case 1:
+            {
+                system("cls");
+                cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" atmosfere = "<<ap(x)<<" PSI"<<endl;
+                cin>>x;
+                break;
+            }
+            case 2:
+            {
+                system("cls");
+                cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" atmosfere = "<<ab(x)<<" bari"<<endl;
+                cin>>x;
+                break;
+            }
+            case 3:
+            {
+                system("cls");
+                cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" atmosfere = "<<ato(x)<<" torr"<<endl;
+                cin>>x;
+                break;
+            }
+            case 4:
+            {
+                system("cls");
+                cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" PSI = "<<pa(x)<<" atmosfere"<<endl;
+                cin>>x;
+                break;
+            }
+            case 5:
+            {
+                system("cls");
+                cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" PSI = "<<pb(x)<<" bari"<<endl;
+                cin>>x;
+                break;
+            }
+            case 6:
+            {
+                system("cls");
+                cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" PSI = "<<pt(x)<<" torr"<<endl;
+                cin>>x;
+                break;
+            }
+            case 7:
+            {
+                system("cls");
+                cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" bari = "<<ba(x)<<" atmosfere"<<endl;
+                cin>>x;
+                break;
+            }
+            case 8:
+            {
+                system("cls");
+                cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" bari = "<<bp(x)<<" PSI"<<endl;
+                cin>>x;
+                break;
+            }
+            case 9:
+            {
+                system("cls");
+                cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" bari = "<<bt(x)<<" torr"<<endl;
+                cin>>x;
+                break;
+            }
+            case 10:
+            {
+                system("cls");
+                cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" torr = "<<ta(x)<<" atmosfere"<<endl;
+                cin>>x;
+                break;
+            }
+            case 11:
+            {
+                system("cls");
+                cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" torr = "<<tp(x)<<" PSI"<<endl;
+                cin>>x;
+                break;
+            }
+            case 12:
+            {
+                system("cls");
+                cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" torr = "<<tb(x)<<" bari"<<endl;
+                cin>>x;
+                break;
+            }
+            }//switch9
+        }//case9
+        break;
+        case 10:
+        {
+
+            system("cls");
+            cout << "\t\t\t\tConvertor Densitate\n"<<endl;
+            cout << "1) Kilograme pe metru cub  in grame pe centimetru cub\n";
+            cout << "2) Kilograme pe metru cub in kilograme pe litru \n";
+            cout << "3) Grame pe centimetru cub in kilograme pe metru cub\n";
+            cout << "4) Grame pe centimetru cub in kilograme pe litru\n";
+            cout << "5) Kilograme pe litru in kilograme pe metru cub\n";
+            cout << "6) Kilograme pe litru in grame pe centimetru cub\n"<<endl;
+            cout<<"\nSelectati optiunea:";
+            cin>>c;
+            switch(c)
+            {
+            case 1:
+            {
+                system("cls");
+                cout<<"\tIntroduceti densitatea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilograme pe metru cub = "<<kmg(x)<<" grame pe centimetru cub"<<endl;
+                cin>>x;
                 break;
 
+            }
+            case 2:
+            {
+                system("cls");
+                cout<<"\tIntroduceti densitatea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
 
+                cout<<x<<" kilograme pe metru cub = "<<kmkl(x)<<" kilograme pe litru"<<endl;
+                cin>>x;
+                break;
+
+            }
+            case 3:
+            {
+                system("cls");
+                cout<<"\tIntroduceti densitatea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grame pe centimetru cub = "<<gkm(x)<<" kilograme pe metru cub"<<endl;
+                cin>>x;
+                break;
+
+            }
+            case 4:
+            {
+                system("cls");
+                cout<<"\tIntroduceti densitatea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" grame pe centimetru cub = "<<gkl(x)<<" kilograme pe litru"<<endl;
+                cin>>x;
+                break;
+
+            }
+            case 5:
+            {
+                system("cls");
+                cout<<"\tIntroduceti densitatea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilograme pe litru = "<<klkm(x)<<" kilograme pe metru cub"<<endl;
+                cin>>x;
+                break;
+
+            }
+            case 6:
+            {
+                system("cls");
+                cout<<"\tIntroduceti densitatea pe care doriti sa o convertiti: "<<endl;
+                cin>>x;
+
+                cout<<setprecision(21)<<x<<" kilograme pe litru = "<<klg(x)<<" grame pe centimetru cub"<<endl;
+                cin>>x;
+                break;
+
+            }
+            }//switch
+        }//case10
+        break;
+        case 11:
+        {
+
+            system("cls");
+            cout << "\t\t\t\tConvertor Consum combustibil\n"<<endl;
+            cout << "1) Litri la 100 km in mile la galoane(US)\n";
+            cout << "2) Litri la 100 km in kilometri la litri\n";
+            cout << "3) Mile la galoane(US) in litri la 100 km\n";
+            cout << "4) Mile la galoane(US) in kilometri la litri\n";
+            cout << "5) Kilometri la litri in litri la 100 km \n";
+            cout << "6) Kilometri la litri in mile la galoane(US)\n"<<endl;
+            cout<<"\nSelectati optiunea:";
+            cin>>c;
+            switch(c)
+            {
+            case 1:
+            {
+                system("cls");
+                cout<<"\tIntroduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+                cout<<x<<" litri la 100 km = "<<klg(x)<<" mile la galoane"<<endl;
+                cin>>x;
+                break;
+
+            }
+            case 2:
+            {
+                system("cls");
+                cout<<"\tIntroduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" litri la 100 km = "<<klg(x)<<" kilometri la litri"<<endl;
+                cin>>x;
+                break;
+
+            }
+            case 3:
+            {
+                system("cls");
+                cout<<"\tIntroduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" mile la galoane = "<<klg(x)<<" litri la 100 km"<<endl;
+                cin>>x;
+                break;
+
+            }
+            case 4:
+            {
+                system("cls");
+                cout<<"\tIntroduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" mile la galoane = "<<klg(x)<<" kilometri la litru"<<endl;
+                cin>>x;
+                break;
+
+            }
+            case 5:
+            {
+                system("cls");
+                cout<<"\tIntroduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilometri la litri = "<<klg(x)<<" litri la 100 km"<<endl;
+                cin>>x;
+                break;
+
+            }
+            case 6:
+            {
+                system("cls");
+                cout<<"\tIntroduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
+                cin>>x;
+
+                cout<<x<<" kilometri la litri = "<<klg(x)<<" mile la galoane"<<endl;
+                cin>>x;
+                break;
+
+            }
+
+
+
+
+
+            }
+
+
+
+        }//case11
+        break;
 
 
 
