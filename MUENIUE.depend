@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1484083498 source:c:\users\tudor c\desktop\mueniue\main.cpp
+	<iostream>
+	<cstdlib>
+	<iomanip>
+	<conio.h>
+
