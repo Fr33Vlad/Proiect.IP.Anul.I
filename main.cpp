@@ -4,7 +4,7 @@
 #include <conio.h>
 using namespace std;
 int c;
-double x,y;
+double x;
 //functii conversie lungime
 double lungMFT( double M)
 {
@@ -118,6 +118,10 @@ double arieMPAR(double MP)
 double arieMPHA(double MP)
 {
     return MP/10000;
+}
+double mpkmp(double x)
+{
+    return x*0.000001;
 }
 double arieKMPAR(double KMP)
 {
@@ -541,97 +545,113 @@ void verificare(double &x)
 c11()
 {
     system("cls");
-    cout << "\t\t\t\tConvertor Consum combustibil\n"<<endl;
-    cout << "1) Litri la 100 km in mile la galoane(US)\n";
-    cout << "2) Litri la 100 km in kilometri la litri\n";
-    cout << "3) Mile la galoane(US) in litri la 100 km\n";
-    cout << "4) Mile la galoane(US) in kilometri la litri\n";
-    cout << "5) Kilometri la litri in litri la 100 km \n";
-    cout << "6) Kilometri la litri in mile la galoane(US)\n"<<endl;
-    cout<<"\nSelectati optiunea:";
+    cout << "\t\t\tConvertor Consum combustibil\n"<<endl;
+    cout << "1) Litri la 100 km\n\n";
+    cout << "2) Mile la galoane(US)\n\n";
+    cout << "3) Kilometri la litri \n"<<endl;
+    cout<<"\nAlegeti unitatea pe care doriti sa o convertiti: ";
     cin>>c;
     switch(c)
     {
     case 1:
     {
-        system("cls");
-        cout<<"Introduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" litri la 100 km = "<<lmg(x)<<" mile la galoane"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+
+        cout<<"Alegeti unitatea in care doriti sa convertiti litri la 100km: ";
+        cin>>c;
+        switch(c)
+        {
+        case 2:
+        {
+            system("cls");
+            cout<<"Introduceti consumul de combustibil pe care doriti sa il convertiti: \n";
+            cin>>x;
+            verificare(x);
+            cout<<x<<" l/100km = "<<lmg(x)<<" mile la galoane"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: ";
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            system("cls");
+            cout<<"Introduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            cout<<x<<" l/100km = "<<lkl(x)<<" kilometri la litri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 2:
     {
-        system("cls");
-        cout<<"Introduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        while(x>999999999999999 || x<0)
+        cout<<"Alegeti unitatea in care doriti sa convertiti mile la galoane:"<<endl;
+        cin>>c;
+        switch(c)
         {
-            cout<<"Valoare gresita"<<endl;
-            cout<<"Dati o valoare noua:"<<endl;
+        case 1:
+        {
+            system("cls");
+            cout<<"Introduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
             cin>>x;
+            verificare(x);
+            cout<<x<<" mile la galoane = "<<mgl(x)<<" l/100km"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
         }
-        cout<<x<<" litri la 100 km = "<<lkl(x)<<" kilometri la litri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-
-        cin>>x;
+        case 3:
+        {
+            system("cls");
+            cout<<"Introduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            cout<<x<<" mile la galoane = "<<mgkl(x)<<" kilometri la litri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
 
     }
     case 3:
     {
-        system("cls");
-        cout<<"Introduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" mile la galoane = "<<mgl(x)<<" litri la 100 km"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-
-    }
-    case 4:
-    {
-        system("cls");
-        cout<<"Introduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" mile la galoane = "<<mgkl(x)<<" kilometri la litru"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-
-    }
-    case 5:
-    {
-        system("cls");
-        cout<<"Introduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilometri la litri = "<<kll(x)<<" litri la 100 km"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-
-    }
-    case 6:
-    {
-        system("cls");
-        cout<<"Introduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilometri la litri = "<<klmg(x)<<" mile la galoane"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti kilometri la litri:"<<endl;
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            system("cls");
+            cout<<"Introduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            cout<<x<<" kilometri la litri = "<<kll(x)<<" l/100km"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            system("cls");
+            cout<<"Introduceti consumul de combustibil pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            cout<<x<<" kilometri la litri = "<<klmg(x)<<" mile la galoane"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
 
     }
@@ -641,425 +661,539 @@ c10()
 {
     system("cls");
     cout << "\t\t\t\tConvertor Densitate\n"<<endl;
-    cout << "1) Kilograme pe metru cub  in grame pe centimetru cub\n";
-    cout << "2) Kilograme pe metru cub in kilograme pe litru \n";
-    cout << "3) Grame pe centimetru cub in kilograme pe metru cub\n";
-    cout << "4) Grame pe centimetru cub in kilograme pe litru\n";
-    cout << "5) Kilograme pe litru in kilograme pe metru cub\n";
-    cout << "6) Kilograme pe litru in grame pe centimetru cub\n"<<endl;
-    cout<<"\nSelectati optiunea:";
+    cout << "1) Kilograme la metru cub\n\n";
+    cout << "2) Grame la centimetru cub\n\n";
+    cout << "3) Kilograme la litru\n"<<endl;
+    cout<<"Alegeti unitatea pe care doriti sa o convertiti: ";
     cin>>c;
     switch(c)
     {
     case 1:
     {
-        system("cls");
-        cout<<"Introduceti densitatea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilograme pe metru cub = "<<kmg(x)<<" grame pe centimetru cub"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
+        cout<<"Alegeti unitatea in care doriti sa convertiti kilograme la metru cub: ";
+        cin>>c;
+        switch(c)
+        {
+        case 2:
+        {
+            system("cls");
+            cout<<"Introduceti densitatea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            cout<<x<<" kilograme la metru cub = "<<kmg(x)<<" grame la centimetru cub"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
 
+        }
+        case 3:
+        {
+            cout<<"Introduceti densitatea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilograme la metru cub = "<<kmkl(x)<<" kilograme la litru"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
+        break;
     }
     case 2:
     {
-        system("cls");
-        cout<<"Introduceti densitatea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilograme pe metru cub = "<<kmkl(x)<<" kilograme pe litru"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
+        cout<<"Alegeti unitatea in care doriti sa convertiti grame la centimetru cub: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti densitatea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grame la centimetru cub = "<<gkm(x)<<" kilograme la metru cub"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
 
+        }
+        case 3:
+        {
+            cout<<"Introduceti densitatea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grame la centimetru cub = "<<gkl(x)<<" kilograme la litru"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+
+        }
+        break;
     }
     case 3:
     {
-        system("cls");
-        cout<<"Introduceti densitatea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grame pe centimetru cub = "<<gkm(x)<<" kilograme pe metru cub"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti kilograme la litru: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti densitatea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilograme la litru = "<<klkm(x)<<" kilograme la metru cub"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti densitatea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<setprecision(21)<<x<<" kilograme la litru = "<<klg(x)<<" grame la centimetru cub"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
-
     }
-    case 4:
-    {
-        system("cls");
-        cout<<"Introduceti densitatea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grame pe centimetru cub = "<<gkl(x)<<" kilograme pe litru"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-
     }
-    case 5:
-    {
-        system("cls");
-        cout<<"Introduceti densitatea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilograme pe litru = "<<klkm(x)<<" kilograme pe metru cub"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-
-    }
-    case 6:
-    {
-        system("cls");
-        cout<<"Introduceti densitatea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<setprecision(21)<<x<<" kilograme pe litru = "<<klg(x)<<" grame pe centimetru cub"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-
-    }
-    }//switch
 }
 c9()
 {
     system("cls");
-    cout << "\t\t\t\tConvertor Presiune\n"<<endl;
-    cout << "1) Atmosfere  in PSI\n";
-    cout << "2) Atmosfere in Bari\n";
-    cout << "3) Atmosfere in Torr\n";
-    cout << "4) PSI in Atmosfere\n";
-    cout << "5) PSI in Bari\n";
-    cout << "6) PSI in Torr\n";
-    cout << "7) Bari in Atmosfere\n";
-    cout << "8) Bari in PSI\n";
-    cout << "9) Bari in Torr\n";
-    cout << "10) Torr in Atmosfere\n";
-    cout << "11) Torr in PSI\n";
-    cout << "12) Torr in Bari\n"<<endl;
-    cout<<"\nSelectati optiunea:";
+    cout << "\t\t\tConvertor Presiune\n"<<endl;
+    cout << "1) Atmosfere\n\n";
+    cout << "2) PSI\n\n";
+    cout << "3) Bari\n\n";
+    cout << "4) Torr\n"<<endl;
+    cout<<"Alegeti unitatea pe care doriti sa o convertiti: ";
     cin>>c;
     switch(c)
     {
     case 1:
     {
-        system("cls");
-        cout<<"Introduceti presiunea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" atmosfere = "<<ap(x)<<" PSI"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti atmosfere : ";
+        cin>>c;
+        switch(c)
+        {
+        case 2:
+        {
+
+            cout<<"Introduceti presiunea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" atmosfere = "<<ap(x)<<" PSI"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+
+            cout<<"Introduceti presiunea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" atmosfere = "<<ab(x)<<" bari"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 4:
+        {
+            cout<<"Introduceti presiunea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" atmosfere = "<<ato(x)<<" torr"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 2:
     {
-        system("cls");
-        cout<<"Introduceti presiunea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" atmosfere = "<<ab(x)<<" bari"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti PSI : ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" PSI = "<<pa(x)<<" atmosfere"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" PSI = "<<pb(x)<<" bari"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" PSI = "<<pt(x)<<" torr"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 3:
     {
-        system("cls");
-        cout<<"Introduceti presiunea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" atmosfere = "<<ato(x)<<" torr"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti bari : ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" bari = "<<ba(x)<<" atmosfere"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;;
+        }
+        case 2:
+        {
+            cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" bari = "<<bp(x)<<" PSI"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" bari = "<<bt(x)<<" torr"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 4:
     {
-        system("cls");
-        cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" PSI = "<<pa(x)<<" atmosfere"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti torr : ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" torr = "<<ta(x)<<" atmosfere"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+
+            cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" torr = "<<tp(x)<<" PSI"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" torr = "<<tb(x)<<" bari"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
-    case 5:
-    {
-        system("cls");
-        cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" PSI = "<<pb(x)<<" bari"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
     }
-    case 6:
-    {
-        system("cls");
-        cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" PSI = "<<pt(x)<<" torr"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 7:
-    {
-        system("cls");
-        cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" bari = "<<ba(x)<<" atmosfere"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;;
-    }
-    case 8:
-    {
-        system("cls");
-        cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" bari = "<<bp(x)<<" PSI"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 9:
-    {
-        system("cls");
-        cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" bari = "<<bt(x)<<" torr"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 10:
-    {
-        system("cls");
-        cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" torr = "<<ta(x)<<" atmosfere"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 11:
-    {
-        system("cls");
-        cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" torr = "<<tp(x)<<" PSI"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 12:
-    {
-        system("cls");
-        cout<<"\tIntroduceti presiunea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" torr = "<<tb(x)<<" bari"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    }//switch9
 }
 c8()
 {
     system("cls");
-    cout << "\t\t\t\tConvertor Energie\n"<<endl;
-    cout << "1) Calorii  in kilocalorii\n";
-    cout << "2) Calorii in jouli\n";
-    cout << "3) Calorii in kilojouli\n";
-    cout << "4) Kilcalorii in calorii\n";
-    cout << "5) Kilcalorii in jouli\n";
-    cout << "6) Kilcalorii in kilojouli\n";
-    cout << "7) Jouli in calorii\n";
-    cout << "8) Jouli in kilocalorii\n";
-    cout << "9) Jouli in kilojouli\n";
-    cout << "10) Kilojouli in calorii\n";
-    cout << "11) Kilojouli in kilocalorii\n";
-    cout << "12) Kilojouli  in jouli\n"<<endl;
-    cout<<"\nSelectati optiunea:";
+    cout << "\t\t\tConvertor Energie\n"<<endl;
+    cout << "1) Calorii\n\n";
+    cout << "2) Kilcalorii\n\n";
+    cout << "3) Jouli\n\n";
+    cout << "4) Kilojouli\n\n"<<endl;
+    cout<<"Alegeti unitatea pe care doriti sa o convertiti: ";
     cin>>c;
     switch(c)
     {
     case 1:
     {
-        system("cls");
-        cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" calorii = "<<calkcal(x)<<" kilocalorii"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti calorii : ";
+        cin>>c;
+        switch(c)
+        {
+        case 2:
+        {
+            cout<<"Introduceti energia pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" calorii = "<<calkcal(x)<<" kilocalorii"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti energia pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" calorii = "<<calj(x)<<" jouli"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 4:
+        {
+            cout<<"Introduceti energia pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" calorii = "<<calkj(x)<<" kilojouli"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
 
     case 2:
     {
-        system("cls");
-        cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" calorii = "<<calj(x)<<" jouli"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti kilocalorii : ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti energia pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilocalorii = "<<kcalcal(x)<<" calorii"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti energia pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilocalorii = "<<kcalj(x)<<" jouli"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti energia pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilocalorii = "<<kcalkj(x)<<" kilojouli"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
+
     }
     case 3:
     {
-        system("cls");
-        cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" calorii = "<<calkj(x)<<" kilojouli"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti jouli : ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti energia pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" jouli = "<<jcal(x)<<" calorii"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti energia pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" jouli = "<<jkcal(x)<<" kilocalorii"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti energia pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" jouli = "<<jkj(x)<<" kilojouli"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
+
     }
     case 4:
     {
-        system("cls");
-        cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilocalorii = "<<kcalcal(x)<<" calorii"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 5:
-    {
-        system("cls");
-        cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilocalorii = "<<kcalj(x)<<" jouli"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 6:
-    {
-        system("cls");
-        cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilocalorii = "<<kcalkj(x)<<" kilojouli"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 7:
-    {
-        system("cls");
-        cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" jouli = "<<jcal(x)<<" calorii"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 8:
-    {
-        system("cls");
-        cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" jouli = "<<jkcal(x)<<" kilocalorii"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 9:
-    {
-        system("cls");
-        cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" jouli = "<<jkj(x)<<" kilojouli"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 10:
-    {
-        system("cls");
-        cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilojouli = "<<kjcal(x)<<" calorii"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 11:
-    {
-        system("cls");
-        cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilojouli = "<<kjkcal(x)<<" kilocalorii"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 12:
-    {
-        system("cls");
-        cout<<"\tIntroduceti energia pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilojouli = "<<kjj(x)<<" jouli"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti kilojouli : ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti energia pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilojouli = "<<kjcal(x)<<" calorii"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti energia pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilojouli = "<<kjkcal(x)<<" kilocalorii"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 3:
+        {
+            cout<<"Introduceti energia pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilojouli = "<<kjj(x)<<" jouli"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     }//switch
@@ -1068,165 +1202,214 @@ c7()
 {
     system("cls");
     cout << "\t\t\t\tConvertor Masa\n"<<endl;
-    cout << "1) Grame  in kilograme\n";
-    cout << "2) Grame in livre\n";
-    cout << "3) Grame in miligrame\n";
-    cout << "4) Kilograme in grame\n";
-    cout << "5) Kilograme in livre\n";
-    cout << "6) Kilograme in miligrame\n";
-    cout << "7) Livre in grame\n";
-    cout << "8) Livre in kilograme\n";
-    cout << "9) Livre in miligrame\n";
-    cout << "10) Miligrame in grame\n";
-    cout << "11) Miligrame in livre\n";
-    cout << "12) Miligrame  in kilograme\n"<<endl;
-    cout<<"\nSelectati optiunea:";
+    cout << "1) Grame\n\n";
+    cout << "2) Kilograme\n\n";
+    cout << "3) Livre\n\n";
+    cout << "4) Miligrame\n\n"<<endl;
+    cout<<"Alegeti unitatea pe care doriti sa o convertiti: ";
     cin>>c;
     switch(c)
     {
     case 1:
     {
-        system("cls");
-        cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grame = "<<gkg(x)<<" kilograme"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti grame: ";
+        cin>>c;
+        switch(c)
+        {
+        case 2:
+        {
+            cout<<"Introduceti masa pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grame = "<<gkg(x)<<" kilograme"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 3:
+        {
+            cout<<"Introduceti masa pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grame = "<<glb(x)<<" livre"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 4:
+        {
+            cout<<"Introduceti masa pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grame = "<<gmg(x)<<" miligrame"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 2:
     {
-        system("cls");
-        cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grame = "<<glb(x)<<" livre"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti kilograme: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti masa pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilograme = "<<kgg(x)<<" grame"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 3:
+        {
+            cout<<"Introduceti masa pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilograme = "<<kglb(x)<<" livre"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 4:
+        {
+            cout<<"Introduceti masa pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilograme = "<<kgmg(x)<<" miligrame"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        }
         break;
+
     }
     case 3:
     {
-        system("cls");
-        cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grame = "<<gmg(x)<<" miligrame"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti livre: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+
+            cout<<"Introduceti masa pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" livre = "<<lbg(x)<<" grame"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 2:
+        {
+            cout<<"Introduceti masa pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" livre = "<<lbkg(x)<<" kilograme"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti masa pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" livre = "<<lbmg(x)<<" miligrame"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 4:
     {
-        system("cls");
-        cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilograme = "<<kgg(x)<<" grame"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti miligrame: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti masa pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" miligrame = "<<mgg(x)<<" grame"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti masa pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" miligrame = "<<mgkg(x)<<" kilograme"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti masa pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" miligrame = "<<mglb(x)<<" livre"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
-    }
-    case 5:
-    {
-        system("cls");
-        cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilograme = "<<kglb(x)<<" livre"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 6:
-    {
-        system("cls");
-        cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilograme = "<<kgmg(x)<<" miligrame"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 7:
-    {
-        system("cls");
-        cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" livre = "<<lbg(x)<<" grame"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 8:
-    {
-        system("cls");
-        cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" livre = "<<lbkg(x)<<" kilograme"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 9:
-    {
-        system("cls");
-        cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" livre = "<<lbmg(x)<<" miligrame"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 10:
-    {
-        system("cls");
-        cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" miligrame = "<<mgg(x)<<" grame"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 11:
-    {
-        system("cls");
-        cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" miligrame = "<<mglb(x)<<" livre"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 12:
-    {
-        system("cls");
-        cout<<"\tIntroduceti masa pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" miligrame = "<<mgkg(x)<<" kilograme"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
+
     }
     }//switch
 
@@ -1235,166 +1418,207 @@ c6()
 {
     system("cls");
     cout << "\t\t\t\tConvertor Temperatura\n"<<endl;
-    cout << "1) Grade celsius in grade fahrenheit\n";
-    cout << "2) Grade celsius in grade rankine\n";
-    cout << "3) Grade celsius in kelvin\n";
-    cout << "4) Grade fahrenheit in grade celsius\n";
-    cout << "5) Grade fahrenheit in grade rankine\n";
-    cout << "6) Grade fahrenheit in grade kelvin\n";
-    cout << "7) Grade rankine in grade celsius\n";
-    cout << "8) Grade rankine in grade fahrenheit\n";
-    cout << "9) Grade rankine in grade kelvin\n";
-    cout << "10) Grade kelvin in grade celsius\n";
-    cout << "11) Grade kelvin in grade fahrenheit\n";
-    cout << "12) Grade kelvin  in grade rankine\n"<<endl;
-    cout<<"\nSelectati optiunea:";
+    cout << "1) Grade celsius\n\n";
+    cout << "2) Grade fahrenheit\n\n";
+    cout << "3) Grade rankine\n\n";
+    cout << "4) Grade kelvin\n\n"<<endl;
+    cout<<"Alegeti unitatea pe care doriti sa o convertiti: ";
     cin>>c;
     switch(c)
     {
     case 1:
     {
-        system("cls");
-        cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grade celsius = "<<tempCF(x)<<" grade fahrenheit"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti grade celsius: ";
+        cin>>c;
+        switch(c)
+        {
+        case 2:
+        {
+            cout<<"Introduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grade celsius = "<<tempCF(x)<<" grade fahrenheit"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grade celsius = "<<tempCR(x)<<" grade rankine "<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grade celsius = "<<tempCK(x)<<" grade kelvin"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 2:
     {
-        system("cls");
-        cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-
-        cout<<x<<" grade celsius = "<<tempCR(x)<<" grade rankine "<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti grade fahrenheit: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grade fahrenheit = "<<tempFC(x)<<" grade celsius"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grade fahrenheit = "<<tempFR(x)<<" grade rankine"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grade fahrenheit = "<<tempFK(x)<<" grade kelvin"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 3:
     {
-        system("cls");
-        cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grade celsius = "<<tempCK(x)<<" grade kelvin"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti grade rankine: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grade rankine = "<<tempRC(x)<<" grade celsius"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 2:
+        {
+            cout<<"Introduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grade rankine = "<<tempRF(x)<<" grade fahrenheit"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 4:
+        {
+            cout<<"Introduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grade rankine = "<<tempRK(x)<<" grade kelvin"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
+
     }
     case 4:
     {
-        system("cls");
-        cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grade fahrenheit = "<<tempFC(x)<<" grade celsius"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 5:
-    {
-        system("cls");
-        cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grade fahrenheit = "<<tempFR(x)<<" grade rankine"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 6:
-    {
-        system("cls");
-        cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grade fahrenheit = "<<tempFK(x)<<" grade kelvin"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 7:
-    {
-        system("cls");
-        cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grade rankine = "<<tempRC(x)<<" grade celsius"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-
-        break;
-    }
-    case 8:
-    {
-        system("cls");
-        cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grade rankine = "<<tempRF(x)<<" grade fahrenheit"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 9:
-    {
-        system("cls");
-        cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grade rankine = "<<tempRK(x)<<" grade kelvin"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 10:
-    {
-        system("cls");
-        cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grade kelvin = "<<tempKC(x)<<" grade celsius"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 11:
-    {
-        system("cls");
-        cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grade kelvin = "<<tempKF(x)<<" grade fahrenheit"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 12:
-    {
-        system("cls");
-        cout<<"\tIntroduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" grade kelvin = "<<tempKR(x)<<" grade rankine"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti grade kelvin: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grade kelvin = "<<tempKC(x)<<" grade celsius"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grade kelvin = "<<tempKF(x)<<" grade fahrenheit"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti numarul de grade pe care doriti sa le convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" grade kelvin = "<<tempKR(x)<<" grade rankine"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     }//switch
@@ -1403,86 +1627,118 @@ c5()
 {
     system("cls");
     cout << "\t\t\t\tConvertor Viteza\n"<<endl;
-    cout << "1) KM/H in MPH\n";
-    cout << "2) KM/H in M/S\n";
-    cout << "3) MPH in KM/H\n";
-    cout << "4) MPH in M/S\n";
-    cout << "5) M/S in KM/H\n";
-    cout << "6) M/S in MPH\n"<<endl;
-    cout<<"\nSelectati optiunea:";
+    cout << "1) KM/H\n\n";
+    cout << "2) MPH\n\n";
+    cout << "3) M/S\n\n"<<endl;
+    cout<<"Alegeti unitatea pe care doriti sa o convertiti: ";
     cin>>c;
     switch(c)
     {
     case 1:
     {
-        system("cls");
-        cout<<"\tIntroduceti viteza pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" KM/H = "<<kmhmph(x)<<" MPH"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti KM/H: ";
+        cin>>c;
+        switch(c)
+        {
+        case 2:
+        {
+            cout<<"Introduceti viteza pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" KM/H = "<<kmhmph(x)<<" MPH"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 3:
+        {
+            cout<<"Introduceti viteza pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" KM/H = "<<kmhms(x)<<" M/S"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 2:
     {
-        system("cls");
-        cout<<"\tIntroduceti viteza pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" KM/H = "<<kmhms(x)<<" M/S"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti MPH: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti viteza pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" MPH = "<<mphkmh(x)<<" KM/H"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti viteza pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<"MPH = "<<mphms(x)<<" M/S"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        }
         break;
     }
     case 3:
     {
-        system("cls");
-        cout<<"\tIntroduceti viteza pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" MPH = "<<mphkmh(x)<<" KM/H"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 4:
-    {
-        system("cls");
-        cout<<"\tIntroduceti viteza pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<"MPH = "<<mphms(x)<<" M/S"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 5:
-    {
-        system("cls");
-        cout<<"\tIntroduceti viteza pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" M/S = "<<mskmh(x)<<" KM/H"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 6:
-    {
-        system("cls");
-        cout<<"\tIntroduceti viteza pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" M/S = "<<msmph(x)<<" MPH"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti M/S: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti viteza pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" M/S = "<<mskmh(x)<<" KM/H"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti viteza pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" M/S = "<<msmph(x)<<" MPH"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     }//switch
@@ -1492,164 +1748,209 @@ c4()
 {
     system("cls");
     cout << "\t\t\t\tConvertor Timp\n"<<endl;
-    cout << "1) Secunde cubi in minute\n";
-    cout << "2) Secunde cubi in ore\n";
-    cout << "3) Secunde cubi in zile\n";
-    cout << "4) Minute in secunde\n";
-    cout << "5) Minute in ore\n";
-    cout << "6) Minute in zile\n";
-    cout << "7) Ore in secunde\n";
-    cout << "8) Ore in minute\n";
-    cout << "9) Ore in zile\n";
-    cout << "10) Zile in secunde\n";
-    cout << "11) Zile in minute\n";
-    cout << "12) Zile in ore\n"<<endl;
-    cout<<"\nSelectati optiunea:";
+    cout << "1) Secunde\n\n";
+    cout << "2) Minute\n\n";
+    cout << "3) Ore\n\n";
+    cout << "4) Zile\n\n"<<endl;
+    cout<<"Alegeti unitatea pe care doriti sa o convertiti: ";
     cin>>c;
     switch(c)
     {
     case 1:
     {
-        system("cls");
-        cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" secunde = "<<smin(x)<<" minute"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti secunde: ";
+        cin>>c;
+        switch(c)
+        {
+        case 2:
+        {
+            cout<<"Introduceti timpul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" secunde = "<<smin(x)<<" minute"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 3:
+        {
+            cout<<"Introduceti timpul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" secunde = "<<sh(x)<<" ore"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 4:
+        {
+            cout<<"Introduceti timpul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" secunde = "<<szi(x)<<" zile "<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 2:
     {
-        system("cls");
-        cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" secunde = "<<sh(x)<<" ore"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti minute: ";
+        cin>>c;
+        switch(c)
+        {
+
+        case 1:
+        {
+            cout<<"Introduceti timpul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" minute = "<<mins(x)<<" secunde"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti timpul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" minute = "<<minh(x)<<" ore"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti timpul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" minute = "<<minzi(x)<<" zile"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+
+        }
         break;
+
     }
     case 3:
     {
-        system("cls");
-        cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" secunde = "<<szi(x)<<" zile "<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti ore: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti timpul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" ore = "<<hs(x)<<" secunde"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti timpul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" ore = "<<hmin(x)<<" minute"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti timpul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" ore = "<<hzi(x)<<" zile"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 4:
     {
-        system("cls");
-        cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" minute = "<<mins(x)<<" secunde"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 5:
-    {
-        system("cls");
-        cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" minute = "<<minh(x)<<" ore"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 6:
-    {
-        system("cls");
-        cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" minute = "<<minzi(x)<<" zile"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 7:
-    {
-        system("cls");
-        cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" ore = "<<hs(x)<<" secunde"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 8:
-    {
-        system("cls");
-        cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" ore = "<<hmin(x)<<" minute"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 9:
-    {
-        system("cls");
-        cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" ore = "<<hzi(x)<<" zile"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 10:
-    {
-        system("cls");
-        cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" zile = "<<zis(x)<<" secunde"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 11:
-    {
-        system("cls");
-        cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" zile = "<<zimin(x)<<" minute"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 12:
-    {
-        system("cls");
-        cout<<"\tIntroduceti timpul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" zile = "<<zih(x)<<" ore"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti zile: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti timpul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" zile = "<<zis(x)<<" secunde"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti timpul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" zile = "<<zimin(x)<<" minute"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti timpul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" zile = "<<zih(x)<<" ore"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     }//switch
@@ -1659,164 +1960,205 @@ c3()
 {
     system("cls");
     cout << "\t\t\t\tConvertor Volum\n"<<endl;
-    cout << "1) Metri cubi in litri\n";
-    cout << "2) Metri cubi in galoane(US)\n";
-    cout << "3) Metri cubi in galoane(UK)\n";
-    cout << "4) Litri in metri cubi\n";
-    cout << "5) Litri in galoane(US)\n";
-    cout << "6) Litri in galoane(UK)\n";
-    cout << "7) Galoane(US) in metri cubi\n";
-    cout << "8) Galoane(US) in galoane(UK)\n";
-    cout << "9) Galoane(US) in litri\n";
-    cout << "10) Galoane(UK) in metri cubi\n";
-    cout << "11) Galoane(UK) in galoane(US)\n";
-    cout << "12) Galoane(UK) in litri\n"<<endl;
-    cout<<"\nSelectati optiunea:";
+    cout << "1) Metri cubi\n\n";
+    cout << "2) Litri\n\n";
+    cout << "3) Galoane(US)\n\n";
+    cout << "4) Galoane(UK)\n\n"<<endl;
+    cout<<"Alegeti unitatea pe care doriti sa o convertiti: ";
     cin>>c;
     switch(c)
     {
     case 1:
     {
-        system("cls");
-        cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" metri cubi = "<<m3l(x)<<" litri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti metri cubi: ";
+        cin>>c;
+        switch(c)
+        {
+        case 2:
+        {
+            cout<<"Introduceti volumul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" metri cubi = "<<m3l(x)<<" litri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti volumul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" metri cubi = "<<m3galUS(x)<<" galoane(US)"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti volumul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" metri cubi = "<<m3galUK(x)<<" galoane(UK)"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
+
     }
     case 2:
     {
-        system("cls");
-        cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" metri cubi = "<<m3galUS(x)<<" galoane(US)"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti litri: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti volumul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" litri = "<<lm3(x)<<" metri cubi"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti volumul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" litri = "<<lgalUS(x)<<" galoane(US)"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti volumul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" litri = "<<lgalUK(x)<<" galoane(UK)"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 3:
     {
-        system("cls");
-        cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" metri cubi = "<<m3galUK(x)<<" galoane(UK)"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti galoane(US): ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti volumul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" galoane(US) = "<<galUSm3(x)<<" metri cubi"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti volumul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" galoane(US) = "<<galUSl(x)<<" litri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti volumul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" galoane(US) = "<<galUSgalUK(x)<<" galoane(UK)"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 4:
     {
-        system("cls");
-        cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" litri = "<<lm3(x)<<" metri cubi"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 5:
-    {
-        system("cls");
-        cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" litri = "<<lgalUS(x)<<" galoane(US)"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 6:
-    {
-        system("cls");
-        cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" litri = "<<lgalUK(x)<<" galoane(UK)"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 7:
-    {
-        system("cls");
-        cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" galoane(US) = "<<galUSm3(x)<<" metri cubi"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 8:
-    {
-        system("cls");
-        cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" galoane(US) = "<<galUSgalUK(x)<<" galoane(UK)"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 9:
-    {
-        system("cls");
-        cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" galoane(US) = "<<galUSl(x)<<" litri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 10:
-    {
-        system("cls");
-        cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" galoane(UK) = "<<galUKm3(x)<<" metri cubi"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 11:
-    {
-        system("cls");
-        cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" galoane(UK) = "<<galUKgalUS(x)<<" galoane(US)"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 12:
-    {
-        system("cls");
-        cout<<"\tIntroduceti volumul pe care doriti sa il convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" galoane(UK) = "<<galUKl(x)<<" litri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti galoane(UK): ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti volumul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" galoane(UK) = "<<galUKm3(x)<<" metri cubi"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti volumul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" galoane(UK) = "<<galUKl(x)<<" litri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti volumul pe care doriti sa il convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" galoane(UK) = "<<galUKgalUS(x)<<" galoane(US)"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     }//switch case3
@@ -1825,153 +2167,208 @@ c2()
 {
     system("cls");
     cout << "\t\t\t\tConvertor Arie\n"<<endl;
-    cout << "1) Ari in hectare\n";
-    cout << "2) Ari in kilometri patrati\n";
-    cout << "3) Ari in metri patrati\n";
-    cout << "4) Hectare in ari\n";
-    cout << "5) Hectare in metri patrati\n";
-    cout << "6) Hectare in kilometri patrati\n";
-    cout << "7) Metri patrati in ari\n";
-    cout << "8) Metri patrati in hectare\n";
-    cout << "9) Kilometri patrati in metri patrati\n";
-    cout << "10) Kilometri patrati in ari\n";
-    cout << "11) Kilometri patrati in hectare\n"<<endl;
-    cout<<"\nSelectati optiunea:";
+    cout << "1) Ari\n\n";
+    cout << "2) Hectare\n\n";
+    cout << "3) Metri patrati\n\n";
+    cout << "4) Kilometri patrati\n\n"<<endl;
+    cout<<"Alegeti unitatea pe care doriti sa o convertiti: ";
     cin>>c;
     switch(c)
     {
 
     case 1:
     {
-        system("cls");
-        cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" ari = "<<arieARHA(x)<<" hectare"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti ari: ";
+        cin>>c;
+        switch(c)
+        {
+        case 2:
+        {
+            cout<<"Introduceti aria pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" ari = "<<arieARHA(x)<<" hectare"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti aria pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" ari = "<<arieARMP(x)<<" metri patrati"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti aria pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" ari = "<<arieARKMP(x)<<" kilometri patrati"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
+
     }
 
     case 2:
     {
-        system("cls");
-        cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" ari = "<<arieARKMP(x)<<" kilometri patrati"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti hectare: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti aria pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" hectare = "<<arieHAAR(x)<<" ari"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti aria pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" hectare = "<<arieHAMP(x)<<" metri patrati"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti aria pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" hectare = "<<arieHAKMP(x)<<" kilometri partati"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 3:
     {
-        system("cls");
-        cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" ari = "<<arieARMP(x)<<" metri patrati"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti metri patrati: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti aria pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" metri patrati = "<<arieMPAR(x)<<" ari"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti aria pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" metri patrati = "<<arieMPHA(x)<<" hectare"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti aria pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" metri patrati = "<<mpkmp(x)<<" kilometri patrati"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 4:
     {
-        system("cls");
-        cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" hectare = "<<arieHAAR(x)<<" ari"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 5:
-    {
-        system("cls");
-        cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" hectare = "<<arieHAMP(x)<<" metri patrati"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 6:
-    {
-        system("cls");
-        cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" hectare = "<<arieHAKMP(x)<<" kilometri partati"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 7:
-    {
-        system("cls");
-        cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" metri patrati = "<<arieMPAR(x)<<" ari"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 8:
-    {
-        system("cls");
-        cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" metri patrati = "<<arieMPHA(x)<<" hectare"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 9:
-    {
-        system("cls");
-        cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilometri patrati = "<<arieKMPMP(x)<<" metri partati"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 10:
-    {
-        system("cls");
-        cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilometri patrati = "<<arieKMPAR(x)<<" ari"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 11:
-    {
-        system("cls");
-        cout<<"\tIntroduceti aria pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilometri patrati = "<<arieKMPHA(x)<<" hectare"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti kilometri patrati: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti aria pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilometri patrati = "<<arieKMPAR(x)<<" ari"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti aria pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilometri patrati = "<<arieKMPHA(x)<<" hectare"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti aria pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilometri patrati = "<<arieKMPMP(x)<<" metri partati"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        }
         break;
     }
     }
@@ -1980,292 +2377,330 @@ c1()
 {
     system("cls");
     cout << "\t\t\t\tConvertor Lungime\n"<<endl;
-    cout << "1) Metri in centimetri\n";
-    cout << "2) Metri in kilometri\n";
-    cout << "3) Metri in inches\n";
-    cout << "4) Metri in feets\n";
-    cout << "5) Centimetri in metri\n";
-    cout << "6) Centimetri in kilometri\n";
-    cout << "7) Centimetri in inches\n";
-    cout << "8) centimetri in feets\n";
-    cout << "9) Kilometri in centimetri\n";
-    cout << "10) Kilometri in metri\n";
-    cout << "11) Kilometri in inches\n";
-    cout << "12) Kilometri in feets\n";
-    cout << "13) Inches in metri\n";
-    cout << "14) Inches in centimetri\n";
-    cout << "15) Inches in feets\n";
-    cout << "16) Inches in kilometri\n";
-    cout << "17) Feets in centimetri\n";
-    cout << "18) Feets in metri\n";
-    cout << "19) Feets in kilometri\n";
-    cout << "20) Feets in inches\n"<<endl;
-    cout<<"\nSelectati optiunea:";
+    cout << "1) Metri\n\n";
+    cout << "2) Centimetri\n\n";
+    cout << "3) Kilometri\n\n";
+    cout << "4) Inches\n\n";
+    cout << "5) Feets\n\n"<<endl;
+    cout<<"Alegeti unitatea pe care doriti sa o convertiti: ";
     cin>>c;
     switch(c)
     {
     case 1:
     {
-        system("cls");
-        cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" metri = "<<lungMCM(x)<<" centimetri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertitic metri: ";
+        cin>>c;
+        switch(c)
+        {
+        case 2:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" metri = "<<lungMCM(x)<<" centimetri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 3:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" metri = "<<lungMKM(x)<<" kilometri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 4:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" metri = "<<lungMIN(x)<<" inches"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+
+        }
+        case 5:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" metri = "<<lungMFT(x)<<" feets(picioare)"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
     }
     case 2:
     {
+        cout<<"Alegeti unitatea in care doriti sa convertiti centimetri: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" centimetri = "<<lungCMM(x)<<" metri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" centimetri = "<<lungCMKM(x)<<" kilometri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" centimetri = "<<lungCMIN(x)<<" inches"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
 
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" metri = "<<lungMKM(x)<<" kilometri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        }
+        case 5:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" centimetri = "<<lungCMFT(x)<<" feets(picioare)"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
+
     }
     case 3:
     {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" metri = "<<lungMIN(x)<<" inches"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti kilometri: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilometri = "<<lungKMM(x)<<" metri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilometri = "<<lungKMCM(x)<<" centimetri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilometri = "<<lungKMIN(x)<<" inches"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 5:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" kilometri = "<<lungKMFT(x)<<" feets(picioare)"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
+
     }
 
     case 4:
     {
+        cout<<"Alegeti unitatea in care doriti sa convertiti inches: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" inches = "<<lungINM(x)<<" metri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" inches = "<<lungINCM(x)<<" centimetri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" inches = "<<lungINKM(x)<<" kilometri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 5:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" inches = "<<lungINFT(x)<<" feets(picioare)"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
 
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" metri = "<<lungMFT(x)<<" feets(picioare)"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
         break;
     }
     case 5:
     {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" centimetri = "<<lungCMM(x)<<" metri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
+        cout<<"Alegeti unitatea in care doriti sa convertiti feets: ";
+        cin>>c;
+        switch(c)
+        {
+        case 1:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" feets(picioare) = "<<lungFTM(x)<<" metri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            system("cls");
+            cout<<endl;
+            cout<<x<<" feets(picioare) = "<<lungFTCM(x)<<" centimetri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 3:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" feets(picioare) = "<<lungFTKM(x)<<" kilometri"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Introduceti lungimea pe care doriti sa o convertiti: "<<endl;
+            cin>>x;
+            verificare(x);
+            system("cls");
+            cout<<endl;
+            cout<<x<<" feets(picioare) = "<<lungFTIN(x)<<" inches"<<endl;
+            cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
+            cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
+            cin>>x;
+            break;
+        }
+        }
         break;
-    }
-    case 6:
-    {
 
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" centimetri = "<<lungCMKM(x)<<" kilometri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 7:
-    {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" centimetri = "<<lungCMIN(x)<<" inches"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 8:
-    {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" centimetri = "<<lungCMFT(x)<<" feets(picioare)"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 9:
-    {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilometri = "<<lungKMCM(x)<<" centimetri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 10:
-    {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilometri = "<<lungKMM(x)<<" metri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 11:
-    {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilometri = "<<lungKMIN(x)<<" inches"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 12:
-    {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" kilometri = "<<lungKMFT(x)<<" feets(picioare)"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 13:
-    {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" inches = "<<lungINM(x)<<" metri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 14:
-    {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" inches = "<<lungINCM(x)<<" centimetri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 15:
-    {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" inches = "<<lungINFT(x)<<" feets(picioare)"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 16:
-    {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" inches = "<<lungINKM(x)<<" kilometri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 17:
-    {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" feets(picioare) = "<<lungFTCM(x)<<" centimetri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-    case 18:
-    {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" feets(picioare) = "<<lungFTM(x)<<" metri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-
-    case 19:
-    {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" feets(picioare) = "<<lungFTKM(x)<<" kilometri"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
-    }
-
-
-    case 20:
-    {
-
-        system("cls");
-        cout<<"\tIntroduceti lungimea pe care doriti sa o convertiti: "<<endl;
-        cin>>x;
-        verificare(x);
-        cout<<x<<" feets(picioare) = "<<lungFTIN(x)<<" inches"<<endl;
-        cout<<"\nPentru a va intoarce la meniul anterior apasati 0 "<<endl;
-        cout<<"Pentru a va intoarce la meniul principal apasati 1: "<<endl;
-        cin>>x;
-        break;
     }
     }
 }
